@@ -19,4 +19,20 @@ public class Game implements Serializable {
     @Column(name="image_url")
     private String imageUrl;
 
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private User user;
+
+    @Override
+    public String toString() {
+        return "Game{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", platform='" + platform + '\'' +
+                ", year=" + year +
+                ", description='" + description + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", user=" + user.getEmail() +
+                '}';
+    }
 }

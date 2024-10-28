@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.dao.GameDAO;
+import org.example.dao.UserDAO;
 import org.example.models.Game;
 import org.hibernate.cfg.Configuration;
 
@@ -8,12 +9,11 @@ public class Main {
     public static void main(String[] args) {
 
         var dao = new GameDAO(HibernateUtil.getSessionFactory());
-        var game = new Game();
+        var userDAO = new UserDAO(HibernateUtil.getSessionFactory());
 
-        game = dao.findAll().getLast();
+        var user = userDAO.validateUser("francsico@cesur.com", "1234");
 
-        game.setYear(2222);
-        dao.delete(game);
+        System.out.println(user);
 
 
     }
