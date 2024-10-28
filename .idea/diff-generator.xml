@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DiffGenerationConfig" isInitGenerateDdl="true">
+    <option name="initGenerateDdl" value="true" />
+    <option name="sourceModelValue" value="HibernateDAO:hibernate.cfg.xml" />
+    <option name="targetDbValue" value="09572780-ff0e-4af1-91d7-1cb97f455808" />
+  </component>
+</project>
