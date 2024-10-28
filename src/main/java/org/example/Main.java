@@ -11,7 +11,7 @@ public class Main {
         var dao = new GameDAO(HibernateUtil.getSessionFactory());
         var userDAO = new UserDAO(HibernateUtil.getSessionFactory());
 
-        var user = userDAO.validateUser("francsico@cesur.com", "1234");
+        var user = userDAO.validateUser("oscar@cesur.com", "1234");
 
         System.out.println(user);
 

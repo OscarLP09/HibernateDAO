@@ -17,9 +17,21 @@ public class User implements Serializable {
     private Long id;
     private String email;
     private String password;
-    private Boolean is_admin;
+    @Column(name = "is_admin")
+    private Boolean isAdmin;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+
+    @OneToMany(mappedBy = "user",
+               fetch = FetchType.EAGER,
+               cascade = CascadeType.ALL
+    )
+    /* CascadeType
+       .REMOVE
+       .ALL
+       .MERGE
+       .PERSIST
+       .DETACH
+     */
     private List<Game> games = new ArrayList<>(0);
 
     public void addGame(Game g) {
